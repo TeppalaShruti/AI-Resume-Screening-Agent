@@ -1,0 +1,26 @@
+Ishaan Patel
+Ahmedabad | ishaan.patel@example.com | +91 99250 33221
+github.com/ishaanpatel
+
+Summary
+Junior data engineer with 2 years of experience building pipelines and ML support tooling.
+
+Technical Skills
+Python, SQL, Spark, PySpark, Airflow, ETL, data engineering, pandas, NumPy,
+scikit-learn basics, PostgreSQL, MongoDB, Docker, AWS, S3, Git, Linux, pytest
+
+Work Experience
+Data Engineer, GridPoint Analytics, 2024 - Present
+- Built Airflow ETL pipelines processing 200GB daily into a warehouse.
+- Supported ML teams with feature tables and data quality checks.
+Trainee Engineer, GridPoint Analytics, 2023 - 2024
+
+Education
+B.Tech in Information Technology, Nirma University, 2023
+
+Projects
+- Streaming ingestion pipeline with Kafka and Spark structured streaming.
+- Data quality framework with automated pytest suites.
+
+Certifications
+AWS Certified Cloud Practitioner

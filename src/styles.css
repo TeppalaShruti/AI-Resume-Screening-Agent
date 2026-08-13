@@ -63,20 +63,20 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.985 0.006 210);
+  --foreground: oklch(0.22 0.03 240);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.52 0.11 200);
+  --primary-foreground: oklch(0.99 0.005 200);
+  --secondary: oklch(0.95 0.015 210);
+  --secondary-foreground: oklch(0.28 0.04 235);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --accent: oklch(0.78 0.14 75);
+  --accent-foreground: oklch(0.25 0.05 60);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -141,4 +141,55 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+/* ---- Screening dashboard design tokens ---- */
+:root {
+  --surface: oklch(1 0 0);
+  --surface-muted: oklch(0.965 0.008 215);
+  --strong: oklch(0.62 0.14 155);
+  --strong-foreground: oklch(0.99 0 0);
+  --good: oklch(0.62 0.11 200);
+  --good-foreground: oklch(0.99 0 0);
+  --moderate: oklch(0.78 0.14 75);
+  --moderate-foreground: oklch(0.26 0.05 60);
+  --weak: oklch(0.62 0.16 25);
+  --weak-foreground: oklch(0.99 0 0);
+  --gradient-header: linear-gradient(135deg, oklch(0.32 0.07 230) 0%, oklch(0.46 0.1 200) 60%, oklch(0.58 0.11 185) 100%);
+  --shadow-card: 0 1px 2px oklch(0.3 0.03 240 / 0.06), 0 8px 24px oklch(0.3 0.03 240 / 0.08);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-strong: var(--strong);
+  --color-strong-foreground: var(--strong-foreground);
+  --color-good: var(--good);
+  --color-good-foreground: var(--good-foreground);
+  --color-moderate: var(--moderate);
+  --color-moderate-foreground: var(--moderate-foreground);
+  --color-weak: var(--weak);
+  --color-weak-foreground: var(--weak-foreground);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+@utility gradient-header {
+  background-image: var(--gradient-header);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
 }

@@ -1,0 +1,25 @@
+Neha Gupta
+Jaipur | neha.gupta@example.com | +91 93140 88776
+
+Summary
+Business analyst with 4 years of experience in requirements gathering and reporting.
+
+Technical Skills
+Excel, SQL, Power BI, Tableau, data visualization, documentation, stakeholder management,
+communication, presentation, Agile, Scrum, JIRA, Confluence, problem solving
+
+Work Experience
+Senior Business Analyst, FinServe, 2022 - Present
+- Owned reporting suite for 3 product lines; ran discovery workshops with stakeholders.
+Business Analyst, FinServe, 2021 - 2022
+
+Education
+MBA in Business Analytics, IIM Indore, 2021
+B.Com, Rajasthan University, 2018
+
+Projects
+- Loan operations KPI dashboard in Power BI.
+- Process automation study reducing manual reporting by 30 hours per month.
+
+Certifications
+CBAP Certification

@@ -1,0 +1,25 @@
+Arjun Menon
+Coimbatore | arjun.menon@example.com | +91 94430 12345
+
+Summary
+Backend Python developer with 3 years of experience building APIs and data services.
+
+Technical Skills
+Python, Django, Flask, FastAPI, REST APIs, PostgreSQL, MySQL, Redis, Celery,
+Docker, Git, Linux, pytest, unit testing, AWS, pandas, SQL, Agile
+
+Work Experience
+Backend Engineer, LogiTrack, 2022 - Present
+- Built FastAPI services handling 5M requests per day.
+- Designed PostgreSQL schemas and Redis caching layers.
+Junior Developer, Softway, 2021 - 2022
+
+Education
+B.E in Computer Science, Anna University, 2021
+
+Projects
+- Async job orchestration service with Celery and Redis.
+- Internal API gateway with rate limiting.
+
+Certifications
+None

@@ -1,0 +1,29 @@
+Priya Nair
+Kochi, Kerala | priya.nair@example.com | +91 99461 22334
+linkedin.com/in/priyanair
+
+Summary
+NLP research associate with 2 years of experience in transformer research and evaluation.
+
+Technical Skills
+Python, PyTorch, Transformers, Hugging Face, NLP, text classification, embeddings,
+scikit-learn, pandas, NumPy, matplotlib, statistics, model evaluation, Git, Linux,
+Flask, REST APIs, Docker, LaTeX, research, literature review
+
+Work Experience
+Research Associate, Centre for AI Research, 2024 - Present
+- Benchmarked 12 transformer models for low-resource Indian language classification.
+- Published 2 papers at ACL workshops on multilingual embeddings.
+AI Intern, Lingua Systems, 2023 - 2024
+- Built a Flask API serving a sentiment model to 20k daily requests.
+
+Education
+M.Sc in Artificial Intelligence, Amrita University, 2024
+B.Sc in Computer Science, MG University, 2022
+
+Projects
+- Multilingual semantic search engine using sentence embeddings and cosine similarity.
+- Experiment tracking dashboard for NLP benchmarks.
+
+Certifications
+Hugging Face NLP Course

@@ -1,0 +1,29 @@
+Karthik Reddy
+Hyderabad | karthik.reddy@example.com | +91 90000 55443
+github.com/karthikreddy
+
+Summary
+Applied scientist with 6 years of experience in NLP, recommendation and search systems.
+
+Technical Skills
+Python, Java, Scala, PyTorch, TensorFlow, Transformers, NLP, embeddings, semantic search,
+Elasticsearch, recommendation systems, reinforcement learning, Spark, PySpark, Airflow,
+data engineering, SQL, scikit-learn, statistics, MLOps, Kubernetes, Docker, AWS, Git,
+research, publications, mentoring, leadership
+
+Work Experience
+Applied Scientist, Marketly, 2020 - Present
+- Led ranking team; improved search relevance NDCG by 12% using transformer rerankers.
+- Published 3 papers on learning-to-rank; mentored 5 junior scientists.
+Data Scientist, Shopwave, 2018 - 2020
+
+Education
+PhD in Computer Science (Information Retrieval), IIIT Hyderabad, 2020
+B.Tech in Computer Science, NIT Warangal, 2015
+
+Projects
+- Two-tower retrieval model with approximate nearest neighbour search.
+- Internal embedding platform serving 40 downstream teams.
+
+Certifications
+None

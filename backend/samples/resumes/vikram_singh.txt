@@ -1,0 +1,26 @@
+Vikram Singh
+Delhi | vikram.singh@example.com | +91 99100 66778
+linkedin.com/in/vikramsingh
+
+Summary
+DevOps and cloud engineer with 5 years of experience in infrastructure automation.
+
+Technical Skills
+Linux, Bash, Docker, Kubernetes, Terraform, AWS, Azure, Jenkins, GitLab CI, CI/CD,
+Python scripting, Prometheus, Grafana, PostgreSQL, Redis, networking
+
+Work Experience
+Senior DevOps Engineer, CloudBridge, 2021 - Present
+- Managed 300+ Kubernetes workloads and cut deploy time from 40 to 6 minutes.
+DevOps Engineer, Nettrix, 2019 - 2021
+
+Education
+B.E in Information Science, Delhi Technological University, 2019
+
+Projects
+- Self-service internal developer platform on EKS.
+- Cost optimization automation saving 22% cloud spend.
+
+Certifications
+Certified Kubernetes Administrator
+AWS Solutions Architect Associate

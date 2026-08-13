@@ -1,0 +1,28 @@
+Sneha Iyer
+Chennai | sneha.iyer@example.com | +91 98404 55667
+linkedin.com/in/snehaiyer
+
+Summary
+Data scientist with 3 years of experience in statistical modeling and machine learning.
+
+Technical Skills
+Python, R, SQL, scikit-learn, pandas, NumPy, statistics, hypothesis testing,
+time series, forecasting, feature engineering, model evaluation, matplotlib, seaborn,
+Tableau, Power BI, Excel, Git, GCP, BigQuery, Airflow
+
+Work Experience
+Data Scientist, RetailIQ, 2022 - Present
+- Built demand forecasting models (Prophet, ARIMA) reducing stockouts 18%.
+- Created executive dashboards in Power BI for 200+ stores.
+Data Analyst, Insight Partners, 2021 - 2022
+
+Education
+M.Sc in Statistics, University of Madras, 2021
+B.Sc in Mathematics, Loyola College, 2019
+
+Projects
+- Customer churn prediction with scikit-learn, AUC 0.88.
+- Retail price elasticity study using regression analysis.
+
+Certifications
+Google Data Analytics Professional Certificate

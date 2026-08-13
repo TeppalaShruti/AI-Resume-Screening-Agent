@@ -1,0 +1,29 @@
+Junior AI Research Associate
+ROOMAN Technologies - Bengaluru (Hybrid)
+
+About the role
+We are hiring a Junior AI Research Associate to build and evaluate applied NLP and
+LLM systems. You will prototype retrieval and reasoning pipelines, run experiments,
+and ship research prototypes into production services with our engineering team.
+
+Responsibilities
+- Build NLP pipelines: document parsing, embeddings, semantic search and RAG
+- Fine-tune and evaluate transformer models; report rigorous metrics
+- Serve models behind Python REST APIs and collaborate on the React dashboards
+- Document experiments and present findings to non-technical stakeholders
+
+Required qualifications
+- Bachelor's degree in Computer Science, AI, Data Science or a related field
+- 1+ years of hands-on experience with Python for machine learning
+- Strong practical knowledge of NLP, Transformers, embeddings and cosine similarity
+- Experience with PyTorch or TensorFlow and scikit-learn
+- Experience building REST APIs with FastAPI or Flask
+- Comfortable with Git, Docker and Linux
+- Solid statistics, model evaluation and feature engineering fundamentals
+
+Preferred
+- Exposure to LLMs, prompt engineering, RAG and vector databases
+- Cloud deployment on AWS or GCP
+- Research publications or strong open-source projects
+- Data visualization and dashboarding, React or Streamlit
+- Excellent communication, problem solving and teamwork
