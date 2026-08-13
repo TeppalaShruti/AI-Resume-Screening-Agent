@@ -1,0 +1,26 @@
+Ananya Das
+Kolkata | ananya.das@example.com | +91 98300 33445
+
+Summary
+Recent graduate with 1 year of internship experience in applied NLP and LLM prototyping.
+
+Technical Skills
+Python, NLP, spaCy, NLTK, Transformers, Hugging Face, embeddings, cosine similarity,
+LLMs, prompt engineering, OpenAI API, LangChain, RAG, Chroma, scikit-learn, pandas,
+NumPy, FastAPI, Streamlit, Git, Linux, Docker basics
+
+Work Experience
+AI Intern, Fintellect, 2025 - Present
+- Prototyped a RAG chatbot over financial filings using OpenAI embeddings and Chroma.
+- Built a Streamlit evaluation dashboard for retrieval quality metrics.
+
+Education
+B.Tech in Computer Science and Engineering, Jadavpur University, 2025
+
+Projects
+- Resume ranking prototype using sentence transformers and cosine similarity.
+- Research paper summarizer with GPT-4 and chunked retrieval.
+- News topic classifier fine-tuned from BERT, F1 0.89.
+
+Certifications
+DeepLearning.AI LangChain for LLM Application Development

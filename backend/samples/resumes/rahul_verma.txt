@@ -1,0 +1,26 @@
+Rahul Verma
+Pune | rahul.verma@example.com | +91 90112 44556
+github.com/rahulverma
+
+Summary
+Full stack developer with 4 years of experience building web platforms.
+
+Technical Skills
+JavaScript, TypeScript, React, Next.js, Node.js, Express, HTML, CSS, Tailwind,
+MongoDB, PostgreSQL, REST APIs, GraphQL, Docker, AWS, Git, Jest, Agile
+
+Work Experience
+Senior Frontend Engineer, Webscale, 2022 - Present
+- Led React dashboard rebuild used by 30k users; improved load time 60%.
+Full Stack Developer, Appcrafters, 2020 - 2022
+- Built Node.js REST APIs and MongoDB data layers.
+
+Education
+B.Tech in Computer Engineering, Pune University, 2020
+
+Projects
+- Real time analytics dashboard with React and websockets.
+- E-commerce storefront with Next.js.
+
+Certifications
+AWS Certified Developer Associate

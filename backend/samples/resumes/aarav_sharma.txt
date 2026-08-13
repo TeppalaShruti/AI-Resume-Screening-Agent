@@ -1,0 +1,33 @@
+Aarav Sharma
+Bengaluru, India | aarav.sharma@example.com | +91 98450 11223
+github.com/aaravsharma | linkedin.com/in/aaravsharma
+
+Summary
+AI engineer with 3 years of professional experience building NLP and LLM systems in production.
+
+Technical Skills
+Python, PyTorch, TensorFlow, scikit-learn, Transformers, Hugging Face, spaCy, NLTK,
+sentence transformers, embeddings, cosine similarity, RAG, LangChain, FAISS, Pinecone,
+FastAPI, Flask, REST APIs, Docker, Kubernetes, AWS, SageMaker, Git, Linux, PostgreSQL,
+pandas, NumPy, statistics, feature engineering, model evaluation, MLflow, pytest
+
+Work Experience
+Senior AI Engineer, Quantly Labs, 2023 - Present
+- Built a retrieval augmented generation assistant over 2M internal documents using
+  sentence transformers embeddings, FAISS vector search and GPT-4, cutting support time 41%.
+- Fine-tuned BERT classifiers for intent detection, F1 0.93, with rigorous cross validation.
+- Served models via FastAPI on AWS ECS with Docker and GitHub Actions CI/CD.
+Machine Learning Engineer, DataNest, 2021 - 2023
+- Shipped NLP pipelines for document parsing with PyMuPDF and OCR.
+
+Education
+M.Tech in Computer Science, IIT Hyderabad, 2021
+B.Tech in Information Technology, VTU, 2019
+
+Projects
+- Semantic resume matcher: embeddings + cosine similarity ranking over 50k resumes.
+- Open-source LangChain retriever plugin with 400+ GitHub stars.
+
+Certifications
+AWS Certified Machine Learning Specialty
+DeepLearning.AI NLP Specialization

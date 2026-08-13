@@ -1,0 +1,20 @@
+Divya Rao
+Mangaluru | divya.rao@example.com | +91 97400 45678
+
+Summary
+Fresher with academic projects in machine learning and data analysis.
+
+Technical Skills
+Python, pandas, NumPy, scikit-learn, matplotlib, SQL, Excel, machine learning basics,
+data analysis, statistics, Git, HTML, CSS, communication, teamwork
+
+Education
+B.C.A, Mangalore University, 2026
+
+Projects
+- Iris and Titanic classification notebooks with scikit-learn.
+- Sales data analysis dashboard in Excel and matplotlib.
+- Movie recommendation system using collaborative filtering.
+
+Certifications
+Coursera Machine Learning by Andrew Ng

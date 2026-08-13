@@ -1,0 +1,30 @@
+Fatima Khan
+Bengaluru | fatima.khan@example.com | +91 98860 99001
+github.com/fatimakhan-ai
+
+Summary
+AI research associate with 2 years of experience in LLM evaluation and retrieval systems.
+
+Technical Skills
+Python, PyTorch, Transformers, Hugging Face, sentence transformers, embeddings,
+cosine similarity, semantic search, RAG, vector databases, FAISS, pgvector, LangChain,
+LLMs, prompt engineering, scikit-learn, statistics, model evaluation, FastAPI, REST APIs,
+Docker, Git, Linux, GCP, Vertex AI, research, pytest, data visualization
+
+Work Experience
+AI Research Associate, ROOMAN adjacent lab, 2024 - Present
+- Designed evaluation harness comparing 6 embedding models for enterprise retrieval.
+- Shipped a FastAPI retrieval microservice with pgvector, p95 latency 90ms.
+Research Intern, IISc, 2023 - 2024
+- Studied instruction tuning effects on small language models.
+
+Education
+M.Tech in Artificial Intelligence, IISc Bengaluru, 2024
+B.Tech in Computer Science, RVCE, 2022
+
+Projects
+- Open source RAG benchmark suite with reproducible experiment configs.
+- Semantic candidate matching engine using cosine similarity over embeddings.
+
+Certifications
+Google Cloud Professional Machine Learning Engineer
