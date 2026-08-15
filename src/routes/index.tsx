@@ -214,6 +214,89 @@ function CandidateDetail({ candidate, weights }: { candidate: ScoredCandidate; w
   );
 }
 
+function EngineTransparency({ result }: { result: ScreeningResult }) {
+  const info = result.engine_info;
+  const rows: [string, string][] = info
+    ? [
+        ["Runtime", info.runtime],
+        ["Document parser", info.parser],
+        ["Embeddings / NLP model", info.embeddings],
+        ["Similarity method", info.similarity],
+        ["Scoring", info.scoring],
+        ["LLM reasoning", info.llm],
+      ]
+    : [
+        ["Runtime", result.engine],
+        ["Embeddings / NLP model", result.embedding_backend],
+        ["Similarity method", "Cosine similarity"],
+        ["Scoring", "Deterministic weighted rubric (/100)"],
+        ["LLM reasoning", result.llm.mode],
+      ];
+  const fallback = info?.fallback_mode ?? result.engine === "browser-fallback";
+
+  return (
+    <Card className="shadow-card">
+      <CardHeader className="flex-row items-center justify-between gap-2 space-y-0">
+        <CardTitle className="flex items-center gap-2 text-base">
+          <BrainCircuit className="size-4" /> Engine transparency
+        </CardTitle>
+        <Badge variant={fallback ? "outline" : "default"}>
+          {fallback ? "Fallback mode" : "Full stack: Sentence Transformers + OpenAI"}
+        </Badge>
+      </CardHeader>
+      <CardContent className="grid gap-2 text-sm sm:grid-cols-2">
+        {rows.map(([label, value]) => (
+          <div key={label} className="rounded-md border bg-surface-muted px-3 py-2">
+            <p className="text-xs uppercase tracking-wide text-muted-foreground">{label}</p>
+            <p className="mt-0.5">{value}</p>
+          </div>
+        ))}
+        <div className="rounded-md border bg-surface-muted px-3 py-2">
+          <p className="text-xs uppercase tracking-wide text-muted-foreground">Run</p>
+          <p className="mt-0.5">
+            Role: {result.job.title} · {result.processed} resumes in {result.duration_seconds}s
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function ScoringMethodology({ weights }: { weights: Record<string, number> }) {
+  return (
+    <Card className="shadow-card">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2 text-base">
+          <ArrowUpDown className="size-4" /> Scoring methodology
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-3 text-sm text-muted-foreground">
+        <p>
+          Every score is computed deterministically in code — the language model only writes the
+          explanation and never produces or alters a number.
+        </p>
+        <div className="grid gap-2 sm:grid-cols-3">
+          {(Object.keys(COMPONENT_LABELS) as (keyof typeof COMPONENT_LABELS)[]).map((key) => (
+            <div key={key} className="rounded-md border px-3 py-2">
+              <p className="font-medium text-foreground">{COMPONENT_LABELS[key]}</p>
+              <p className="text-xs">{weights[key] ?? 0}% of the final score</p>
+            </div>
+          ))}
+        </div>
+        <ul className="list-disc space-y-1 pl-5 text-xs">
+          <li>Skills: overlap between JD skills and resume skills from a 120+ term taxonomy with aliases.</li>
+          <li>Semantic: cosine similarity between JD and resume embeddings, clamped to [0, 1].</li>
+          <li>Experience: detected years vs. the JD minimum, with partial credit below it.</li>
+          <li>Education: highest detected qualification vs. the JD requirement.</li>
+          <li>Technologies: explicitly required tools present in the resume.</li>
+          <li>Project / domain relevance: domain keywords found in project and summary sections.</li>
+          <li>Match levels: Strong ≥ 80, Good ≥ 65, Moderate ≥ 45, otherwise Weak; shortlisted at ≥ 65 unless every required technology is missing.</li>
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
+
 function ScreeningDashboard() {
   const [jdText, setJdText] = useState("");
   const [files, setFiles] = useState<File[]>([]);
@@ -427,11 +510,17 @@ function ScreeningDashboard() {
 
         {result && (
           <>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {[
                 { label: "Candidates processed", value: result.processed },
                 { label: "Shortlisted", value: result.summary.shortlisted },
                 { label: "Average score", value: result.summary.average_score },
+                {
+                  label: "Highest score",
+                  value:
+                    result.summary.highest_score ??
+                    Math.max(...result.candidates.map((c) => c.overall_score)),
+                },
                 { label: "Files skipped", value: result.failed.length },
               ].map((stat) => (
                 <Card key={stat.label} className="shadow-card">
@@ -443,10 +532,8 @@ function ScreeningDashboard() {
               ))}
             </div>
 
-            <p className="text-xs text-muted-foreground">
-              Role: <strong>{result.job.title}</strong> · engine: {result.engine} · embeddings:{" "}
-              {result.embedding_backend} · reasoning: {result.llm.mode}
-            </p>
+            <EngineTransparency result={result} />
+            <ScoringMethodology weights={result.weights} />
 
             <Card className="shadow-card">
               <CardHeader className="gap-3 sm:flex-row sm:items-center sm:justify-between">

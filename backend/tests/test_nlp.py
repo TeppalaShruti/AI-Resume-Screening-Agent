@@ -28,3 +28,24 @@ def test_relevant_resume_scores_higher_than_irrelevant():
     bad = "Business analyst preparing power bi dashboards and stakeholder reports."
     backend = get_backend()
     assert semantic_similarity(jd, good, backend) > semantic_similarity(jd, bad, backend)
+
+
+def test_similarity_backend_is_reported_honestly():
+    from nlp.similarity import similarity_backend
+
+    assert similarity_backend() in {
+        "sklearn.metrics.pairwise.cosine_similarity",
+        "pure-python-cosine",
+    }
+
+
+def test_cosine_matrix_matches_pairwise():
+    from nlp.similarity import cosine_similarity_matrix
+
+    query = [1.0, 0.0, 1.0]
+    docs = [[1.0, 0.0, 1.0], [0.0, 1.0, 0.0]]
+    sims = cosine_similarity_matrix(query, docs)
+    assert len(sims) == 2
+    assert round(sims[0], 6) == 1.0
+    assert round(sims[1], 6) == 0.0
+    assert cosine_similarity_matrix(query, []) == []

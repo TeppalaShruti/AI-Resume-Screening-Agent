@@ -61,12 +61,23 @@ export interface ScoredCandidate {
   warnings: string[];
 }
 
+export interface EngineInfo {
+  runtime: string;
+  parser: string;
+  embeddings: string;
+  similarity: string;
+  scoring: string;
+  llm: string;
+  fallback_mode: boolean;
+}
+
 export interface ScreeningResult {
   run_id: string;
   job: JobRequirements;
   weights: Record<string, number>;
   embedding_backend: string;
   llm: { enabled: boolean; model: string; mode: string };
+  engine_info?: EngineInfo;
   processed: number;
   failed: { filename: string; error: string }[];
   duration_seconds: number;
@@ -78,6 +89,7 @@ export interface ScreeningResult {
     moderate: number;
     weak: number;
     average_score: number;
+    highest_score?: number;
   };
   engine: "python-api" | "browser-fallback";
 }

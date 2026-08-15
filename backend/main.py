@@ -17,7 +17,7 @@ from fastapi.responses import PlainTextResponse
 from exporters import to_csv
 from llm.reasoning import generate_batch_reasoning, llm_status
 from nlp.embeddings import get_backend
-from nlp.similarity import cosine_similarity
+from nlp.similarity import cosine_similarity_matrix, similarity_backend
 from parsers.document_parser import ParseError, SUPPORTED_EXTENSIONS, parse_bytes
 from parsers.extractor import extract_profile
 from scoring.scorer import WEIGHTS, parse_job_description, rank_candidates, score_candidate
@@ -38,12 +38,36 @@ app.add_middleware(
 _LAST_RUN: dict = {}
 
 
+def engine_info() -> dict:
+    """Honest description of what actually ran (never claims unused components)."""
+    backend = get_backend()
+    llm = llm_status()
+    return {
+        "runtime": "python-fastapi",
+        "parser": "PyMuPDF (PDF) · python-docx (DOCX) · plain text (TXT/MD)",
+        "embeddings": (
+            f"Sentence Transformers ({backend.name.split(':', 1)[-1]})"
+            if backend.name.startswith("sentence-transformers")
+            else "TF-IDF fallback (Sentence Transformers unavailable)"
+        ),
+        "similarity": similarity_backend(),
+        "scoring": "Deterministic weighted rubric in scoring/scorer.py (Python, /100)",
+        "llm": (
+            f"OpenAI {llm['model']} — explanations only, never numbers"
+            if llm["enabled"]
+            else "Fallback mode: deterministic template reasoning (no OPENAI_API_KEY set)"
+        ),
+        "fallback_mode": (not llm["enabled"]) or not backend.name.startswith("sentence-transformers"),
+    }
+
+
 @app.get("/health")
 def health() -> dict:
     return {
         "status": "ok",
         "llm": llm_status(),
         "embedding_backend": get_backend().name,
+        "engine_info": engine_info(),
         "weights": WEIGHTS,
         "supported_files": sorted(SUPPORTED_EXTENSIONS),
     }
@@ -89,10 +113,11 @@ async def screen(
     backend = get_backend()
     vectors = backend.encode([jd.text] + [doc.text for doc, _ in parsed])
     jd_vec, resume_vecs = vectors[0], vectors[1:]
+    similarities = cosine_similarity_matrix(jd_vec, resume_vecs)
 
     scored = []
-    for (doc, profile), vec in zip(parsed, resume_vecs):
-        similarity = max(0.0, min(1.0, cosine_similarity(jd_vec, vec)))
+    for (doc, profile), raw_similarity in zip(parsed, similarities):
+        similarity = max(0.0, min(1.0, raw_similarity))
         scored.append(
             score_candidate(
                 jd=jd,
@@ -121,6 +146,7 @@ async def screen(
         "weights": WEIGHTS,
         "embedding_backend": backend.name,
         "llm": llm_status(),
+        "engine_info": engine_info(),
         "processed": len(ranked),
         "failed": failures,
         "duration_seconds": round(time.time() - started, 2),
@@ -132,6 +158,7 @@ async def screen(
             "moderate": sum(1 for c in ranked if c.match_level == "Moderate"),
             "weak": sum(1 for c in ranked if c.match_level == "Weak"),
             "average_score": round(sum(c.overall_score for c in ranked) / len(ranked), 2),
+            "highest_score": max(c.overall_score for c in ranked),
         },
     }
     _LAST_RUN.clear()
