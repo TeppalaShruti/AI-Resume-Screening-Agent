@@ -89,10 +89,11 @@ async def screen(
     backend = get_backend()
     vectors = backend.encode([jd.text] + [doc.text for doc, _ in parsed])
     jd_vec, resume_vecs = vectors[0], vectors[1:]
+    similarities = cosine_similarity_matrix(jd_vec, resume_vecs)
 
     scored = []
-    for (doc, profile), vec in zip(parsed, resume_vecs):
-        similarity = max(0.0, min(1.0, cosine_similarity(jd_vec, vec)))
+    for (doc, profile), raw_similarity in zip(parsed, similarities):
+        similarity = max(0.0, min(1.0, raw_similarity))
         scored.append(
             score_candidate(
                 jd=jd,
@@ -121,6 +122,7 @@ async def screen(
         "weights": WEIGHTS,
         "embedding_backend": backend.name,
         "llm": llm_status(),
+        "engine_info": engine_info(),
         "processed": len(ranked),
         "failed": failures,
         "duration_seconds": round(time.time() - started, 2),
@@ -132,6 +134,7 @@ async def screen(
             "moderate": sum(1 for c in ranked if c.match_level == "Moderate"),
             "weak": sum(1 for c in ranked if c.match_level == "Weak"),
             "average_score": round(sum(c.overall_score for c in ranked) / len(ranked), 2),
+            "highest_score": max(c.overall_score for c in ranked),
         },
     }
     _LAST_RUN.clear()
