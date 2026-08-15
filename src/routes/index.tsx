@@ -290,7 +290,7 @@ function ScoringMethodology({ weights }: { weights: Record<string, number> }) {
           <li>Education: highest detected qualification vs. the JD requirement.</li>
           <li>Technologies: explicitly required tools present in the resume.</li>
           <li>Project / domain relevance: domain keywords found in project and summary sections.</li>
-          <li>Match levels: Strong ≥ 75, Good ≥ 60, Moderate ≥ 45, otherwise Weak; shortlist at ≥ 60.</li>
+          <li>Match levels: Strong ≥ 80, Good ≥ 65, Moderate ≥ 45, otherwise Weak; shortlisted at ≥ 65 unless every required technology is missing.</li>
         </ul>
       </CardContent>
     </Card>
