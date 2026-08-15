@@ -427,11 +427,17 @@ function ScreeningDashboard() {
 
         {result && (
           <>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {[
                 { label: "Candidates processed", value: result.processed },
                 { label: "Shortlisted", value: result.summary.shortlisted },
                 { label: "Average score", value: result.summary.average_score },
+                {
+                  label: "Highest score",
+                  value:
+                    result.summary.highest_score ??
+                    Math.max(...result.candidates.map((c) => c.overall_score)),
+                },
                 { label: "Files skipped", value: result.failed.length },
               ].map((stat) => (
                 <Card key={stat.label} className="shadow-card">
@@ -443,10 +449,8 @@ function ScreeningDashboard() {
               ))}
             </div>
 
-            <p className="text-xs text-muted-foreground">
-              Role: <strong>{result.job.title}</strong> · engine: {result.engine} · embeddings:{" "}
-              {result.embedding_backend} · reasoning: {result.llm.mode}
-            </p>
+            <EngineTransparency result={result} />
+            <ScoringMethodology weights={result.weights} />
 
             <Card className="shadow-card">
               <CardHeader className="gap-3 sm:flex-row sm:items-center sm:justify-between">
