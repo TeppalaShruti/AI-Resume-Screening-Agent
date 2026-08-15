@@ -107,6 +107,15 @@ export async function screenLocally(
     weights: { ...WEIGHTS },
     embedding_backend: "tfidf-browser-fallback",
     llm: { enabled: false, model: "none", mode: "template-fallback" },
+    engine_info: {
+      runtime: "browser-fallback (Python FastAPI service not reachable)",
+      parser: "pdf.js (PDF) · mammoth (DOCX) · plain text (TXT/MD)",
+      embeddings: "TF-IDF vectors computed in the browser — NOT Sentence Transformers",
+      similarity: "Cosine similarity (TypeScript implementation)",
+      scoring: "Same deterministic weighted rubric as the Python engine (/100)",
+      llm: "Fallback mode: deterministic template reasoning (no OpenAI call)",
+      fallback_mode: true,
+    },
     processed: ranked.length,
     failed,
     duration_seconds: Math.round((performance.now() - started) / 10) / 100,
@@ -119,6 +128,7 @@ export async function screenLocally(
       weak: ranked.filter((c) => c.match_level === "Weak").length,
       average_score:
         Math.round((ranked.reduce((sum, c) => sum + c.overall_score, 0) / ranked.length) * 100) / 100,
+      highest_score: Math.max(...ranked.map((c) => c.overall_score)),
     },
     engine: "browser-fallback",
   };
