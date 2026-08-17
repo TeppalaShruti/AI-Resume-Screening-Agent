@@ -202,3 +202,9 @@ available, because dense embeddings capture paraphrase that TF-IDF misses.)
 | HR dashboard | `src/routes/index.tsx`: stats, search, filter, sort, score bars, progress, detail modal |
 | Explainability & transparency | Engine transparency panel + scoring methodology section + per-candidate breakdown |
 | Reproducibility | Pure scoring functions, 22 pytest tests, `run_samples.py`, committed sample output |
+
+
+<img width="1920" height="975" alt="1" src="https://github.com/user-attachments/assets/7035bfd2-6fe0-458e-a32b-d93d2cfeb5b8" />
+<img width="1920" height="943" alt="2" src="https://github.com/user-attachments/assets/88a887b5-d987-4ad2-bfda-bec259629afc" />
+<img width="1920" height="943" alt="3" src="https://github.com/user-attachments/assets/012b195d-17e8-4b75-bc47-621485e3ae2c" />
+<img width="1920" height="973" alt="4" src="https://github.com/user-attachments/assets/bceae0d2-f5e5-45ed-bae3-9049dfe4ac42" />
