@@ -134,7 +134,7 @@ verbatim to produce: strengths, gaps, matched/missing skill narrative, the reaso
 shortlist recommendation. Configure via `.env`:
 
 ```env
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=your-api-key-here
 OPENAI_MODEL=gpt-4o-mini
 ```
 
